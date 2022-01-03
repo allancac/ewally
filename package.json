@@ -4,6 +4,7 @@
   "description": "Teste tecnico para entrevista na ewally- Desenvolvedor FullStack Junior",
   "main": "server.js",
   "scripts": {
+    "test":"jest",
     "start": "node server.js",
     "server": "nodemon server.js"
   },
@@ -17,9 +18,9 @@
       "git add"
     ]
   },
-  "husky":{
-    "hooks":{
-      "pre-commit":"lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
   "author": "Allan Chaves",
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "husky": "^7.0.4",
+    "jest": "^27.4.5",
     "lint-staged": "^12.1.5",
     "nodemon": "^2.0.15",
     "standard": "^16.0.4"
