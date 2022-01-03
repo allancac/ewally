@@ -1,0 +1,26 @@
+{
+  "name": "ewally",
+  "version": "1.0.0",
+  "description": "Teste tecnico para entrevista na ewally- Desenvolvedor FullStack Junior",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allancac/ewally.git"
+  },
+  "author": "Allan Chaves",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/allancac/ewally/issues"
+  },
+  "homepage": "https://github.com/allancac/ewally#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
