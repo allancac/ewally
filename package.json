@@ -11,6 +11,17 @@
     "type": "git",
     "url": "git+https://github.com/allancac/ewally.git"
   },
+  "lint-staged": {
+    "*.js": [
+      "standard --fix",
+      "git add"
+    ]
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit":"lint-staged"
+    }
+  },
   "author": "Allan Chaves",
   "license": "MIT",
   "bugs": {
@@ -21,6 +32,8 @@
     "express": "^4.17.2"
   },
   "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.5",
     "nodemon": "^2.0.15",
     "standard": "^16.0.4"
   }
