@@ -14,7 +14,7 @@ class BoletoUseCase {
         resposta = validaTitulos(barCode)
       }
       // Retorna um objeto com o resultado para o layer de apresentação.
-      return (resposta)
+      return resposta
     } catch (erro) {
       return (erro.message)
     }
