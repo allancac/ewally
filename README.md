@@ -16,6 +16,37 @@ npm run start
 ```console
 npm run test
 ```
+
+## Utilização
+A API recebe requisições HTTP GET no endpoint /boleto. A linha de código digitável do boleto deve ser passada como parãmetro na URI.
+### Exemplo
+1. Boletos de Títulos bancários 
+* http://localhost:8080/boleto/03399852516250002869118013001013788580000029000
+
+2. Boletos de Convênios
+* http://localhost:8080/boleto/85890000024408303591202110060300000364742508
+
+### Resposta
+A resposta do servidor em caso de sucesso recebe um status 200 no cabeçalho HTTP de resposta e um objeto JSON no seguinte formato:
+
+
+```json
+{
+    "barCode": "03399852516250002869118013001013788580000029000",
+    "amount": "290.00",
+    "expirationDate": "6/1/2022"
+}
+```
+
+Em caso de erro na validação, o servidor responderá com status 400 no cabeçalho HTTP da resposta e um objeto JSON no seguinte formato:
+
+```json
+{
+    "erros": {
+        "qtdDigitos": "A linha digitável fornecida não possui 47 dígitos."
+    }
+}
+```
 ## Descrição do Projeto: 
 API RESTful para validação de boletos  
 ## Requisitos:
