@@ -1,55 +1,21 @@
-const validaTitulos = (barCode) => {
-  const resposta = [
-    {
-      isValid: true
-    },
-    {
-      barCode,
-      amount: '',
-      expirationDate: ''
-    },
-    {
-      erros: {}
-    }
-  ]
-  // Realizar testes
-  return false
-}
+const { validaConvenios } = require('./validaConvenios')
+const { validaTitulos } = require('./validaTitulos')
 
-const validaConvenios = (barCode) => {
-  const resposta = [
-    {
-      isValid: true
-    },
-    {
-      barCode,
-      amount: '',
-      expirationDate: ''
-    },
-    {
-      erros: {}
-    }
-  ]
-  // Realizar testes
-  return resposta
-}
 // Domain
 class BoletoUseCase {
   async validarBoleto (barCode) {
     let resposta = {}
     try {
       const primDigito = Number(barCode[0])
+      // Verificação se é um boleto de convênios ou de Títulos
       if (primDigito === 8) {
-        console.log('Retorno quando é chamado o validaConvenios. Layer Domínio')
         resposta = validaConvenios(barCode)
       } else {
-        console.log('Retorno quando é chamado o validaTitulos. Layer Domínio')
         resposta = validaTitulos(barCode)
       }
-
+      // Retorna um objeto com o resultado para o layer de apresentação.
       return (resposta)
     } catch (erro) {
-      console.log('retorno do catch do validaBoleto. Layer Domínio')
       return (erro.message)
     }
   }
