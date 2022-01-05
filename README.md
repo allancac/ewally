@@ -1,6 +1,22 @@
 # Teste Técnico para vaga de Desenvolvedor FullStack Junior na empresa ewally
 
-## Descrição di Projeto: 
+## Instalação
+```console
+npm install
+```
+## Execução em Desenvolvimento
+```console
+npm run server
+```
+## Execução em Produção
+```console
+npm run start
+```
+## Execução de Testes
+```console
+npm run test
+```
+## Descrição do Projeto: 
 API RESTful para validação de boletos  
 ## Requisitos:
 O teste consiste em escrever um programa em Node.js que expõe uma API na qual é dada
@@ -18,3 +34,4 @@ como entrada uma linha digitada de um boleto e que retorna:
 
 ### Testes
 * [Jest](https://jestjs.io/) - Framework de testes para a linguagem JavaScript
+

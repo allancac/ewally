@@ -1,4 +1,4 @@
-const { verificaDV } = require('./modules/verificaDV')
+const { verificaDVMod10 } = require('./modules/verificaDVMod10')
 
 // Função para Tratamento de Boletos de Títulos Bancários
 const validaTitulos = (barCode) => {
@@ -54,19 +54,19 @@ const validaTitulos = (barCode) => {
     ]
 
     // Validar cada campo com o dígito verificador
-    if (verificaDV(campos[0].sequencia) !== Number(campos[0].DV)) {
+    if (verificaDVMod10(campos[0].sequencia) !== Number(campos[0].DV)) {
       resposta[2].erros.dv = 'O campo 1 e seu respectivo Dígito Verificador são inválidos'
     } else {
       resposta[0].isValid = true
     }
 
-    if (verificaDV(campos[1].sequencia) !== Number(campos[1].DV)) {
+    if (verificaDVMod10(campos[1].sequencia) !== Number(campos[1].DV)) {
       resposta[2].erros.dv = 'O campo 2 e seu respectivo Dígito Verificador são inválidos'
     } else {
       resposta[0].isValid = true
     }
 
-    if (verificaDV(campos[2].sequencia) !== Number(campos[2].DV)) {
+    if (verificaDVMod10(campos[2].sequencia) !== Number(campos[2].DV)) {
       resposta[2].erros.dv = 'O campo 3 e seu respectivo Dígito Verificador são inválidos'
     } else {
       resposta[0].isValid = true

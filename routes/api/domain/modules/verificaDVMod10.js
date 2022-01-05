@@ -1,5 +1,5 @@
 // Função para verificar o digito verificador do primeiro, segundo e terceiro campos
-const verificaDV = (campo) => {
+const verificaDVMod10 = (campo) => {
   /**
           b) Os multiplicadores começam com o número 2 (dois), sempre pela direita, alternando-
           se 1 e 2;
@@ -32,4 +32,4 @@ const verificaDV = (campo) => {
   return (Math.ceil(somatorio / 10) * 10) - somatorio
 }
 
-exports.verificaDV = verificaDV
+exports.verificaDVMod10 = verificaDVMod10
